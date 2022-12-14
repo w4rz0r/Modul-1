@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.18.0.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.18.0.js"></script>
+    <script>
+        QUnit.test("contains '@' ", function(assert) {
+        const actual = isThisAEmail('test.unit@test.com');
+        const expected = true;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("doesn't contain 'spaces' ", function(assert) {
+        const actual = isThisAEmail('test.unit@test.com');
+        const expected = true;
+        assert.equal(actual, expected);
+    });
+
+    QUnit.test("contains 'dot' before and after @ ", function(assert) {
+        const actual = isThisAEmail('test.unit@test.com');
+        const expected = true;
+        assert.equal(actual, expected);
+    });
+
+
+    </script>
+
+    <script src="./sjekk-epost.js"></script>
+</body>
+</html>

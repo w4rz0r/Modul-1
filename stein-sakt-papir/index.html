@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./controller/rock-paper-scissors.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app"></div>
+
+
+    <script>
+let result = '';
+
+render();
+function render(){   
+       html = /*html*/`
+
+       <h1 id="pokemon">POKÉMON</h1>
+       <h2 id="resultat">${result}</h2>
+       <img id="all-elements" src="./images/all-elements.png">
+       <div id="images">
+        <h2>choose your element!</h2>
+        <div id="ground" ><img onclick="pickElement('ground')" class="element" src="./images/ground-logo.png">
+       <img id="electric" onclick="pickElement('electric')" class="element" src="./images/electric-logo.png">
+       <img id="water" onclick="pickElement('water')" class="element" src="./images/water-logo.png">
+        
+
+        <div id="living-Elements">
+        <img class="human" src="./images/player.gif">
+       <img id="onix" src="./images/onix.gif">
+       <img id="pikachu" src="./images/Pikachu.gif">
+       <img id="gyarados" src="./images/gyarados.gif">
+       <img class="human" src="./images/opponent.gif">
+       </div>
+       `;
+
+       document.getElementById('app').innerHTML = html;
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="color"></div>
+    <button onclick="changeColorfunction()">Set Color</button>
+    <script>
+        
+        //creating 3 variables with 3 number values.
+        let red = Math.floor(Math.random() * 255 );
+        let green = Math.floor(Math.random() * 255 );
+        let blue = Math.floor(Math.random() * 255 );
+
+        changeColor(red, green, blue) //takes the 3 parameters
+        function changeColor(red, green, blue) {
+           // let change = document.body;
+            //change.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+           document.getElementById('color').innerHTML = `<div style="background-color: rgb(${red}, ${green}, ${blue});  height: 50px; width: 50px;"> </div>`
+            //get's the id of our div and sets background color property and calls for our 3 parameters with 3 values.
+        }
+
+         function changeColorfunction() {
+             let red = Math.floor(Math.random() * 255 );
+             let green = Math.floor(Math.random() * 255 );
+             let blue = Math.floor(Math.random() * 255 );
+           changeColor(red, green, blue);
+         }
+        </script>
+</body>
+</html>

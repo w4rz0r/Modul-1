@@ -1,0 +1,76 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+  padding: 2ch;
+  margin: auto;
+  font-size: 1.2em;
+  font-family: sans-serif;
+  color: aliceblue;
+  background-color: #121212;
+}
+
+body {
+  margin: 0;
+}
+
+.page-title {
+  color: #f700ff;
+  font-weight: normal;
+  text-align: center;
+  font-size: 6em;
+}
+
+.game-info-container {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-info {
+  color: #5814d8;
+  font-size: 4em;
+}
+
+.game-container {
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  justify-content: center;
+  perspective: 500px;
+}
+
+.card {
+  position: relative;
+  height: 175px;
+  width: 125px;
+}
+
+.new-image {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  border-width: 1px;
+}
+
+
+.spider {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#card-image {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}

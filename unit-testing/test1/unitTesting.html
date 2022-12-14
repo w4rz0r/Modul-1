@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.18.0.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.18.0.js"></script>
+    <script>
+        QUnit.test("gjør liten forbokstav til stor'", function (assert) {
+            const actual = fixText('terje');
+            const expected = 'Terje';
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test(" fjern space etter terje", function (assert) {
+            const actual = fixText('terje ');
+            const expected = 'Terje';
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("fjern space før og etter terje", function (assert) {
+            const actual = fixText(' terje ');
+            const expected = 'Terje';
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test("gjør stor bokstav inne ord til liten", function (assert) {
+            const actual = fixText(' teRje ');
+            const expected = 'Terje';
+            assert.equal(actual, expected);
+        });
+    </script>
+
+    <script src="lib.js"></script>
+</body>
+</html>

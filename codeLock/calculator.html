@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+
+    button {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: green;
+        font-size: 20px;
+    }
+
+    button:hover {
+        background: red;
+    }
+
+
+</style>
+<body>
+    <div id="app"></div>
+    <script>
+    let lock = 'locked';
+    let number = '';
+    let code = '7137';
+
+
+
+    render();
+    function render() {
+        html = `
+        <div>
+            <button onclick="numbers(this)">1</button>
+            <button onclick="numbers(this)">2</button>
+            <button onclick="numbers(this)">3</button><br>
+            <button onclick="numbers(this)">4</button>
+            <button onclick="numbers(this)">5</button>
+            <button onclick="numbers(this)">6</button><br>
+            <button onclick="numbers(this)">7</button>
+            <button onclick="numbers(this)">8</button>
+            <button onclick="numbers(this)">9</button>
+        </div>
+            <a>${number}</a><br>
+            <a>${lock}</a>`;
+            document.getElementById('app').innerHTML = html;
+    }
+
+    function numbers(value) {
+        number += value.innerHTML;
+        if (number === code) {
+            lock = 'open!';
+        }
+        render();
+    }
+
+</script>
+</body>
+</html>

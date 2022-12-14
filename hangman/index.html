@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app"></div>
+    <script>
+
+        //model
+
+        let model = 
+        {
+            fasit:
+            [
+                'avada kedavra',
+                'petrificus totalus',
+                'imperio',
+                'confringo',
+                'entrail expelling curse',
+                'transmogrifian torture',
+                'crucio',
+                'fiendfyre',
+
+                'expelliarmus',
+                'expecto patronum',
+                'accio',
+                'confundo',
+                'homenum revelio',
+                'duro',
+                'obliviate',
+                'wingardium leviosa',
+                'bombarda maxima',
+                'protego diabolica',
+                'firestorm',
+
+                'legilimens',
+                'apparition',
+                'stupefy',
+
+                'sectumsempra',
+                'vulnera sanentur',
+                'levicorpus',
+                'liberacorpus',
+                'muffliato',
+                'langlock',
+            ],
+            wrongLetters: [],
+            correctLetters: [],
+            guessedLetters: '',
+            pickedword: '',
+        }
+
+    
+    render();
+    function render() {
+        html = /*HTML*/`
+        <div class="borders">Feil: ${model.wrongLetters.join(' ')}</div>
+        <div class="borders">Rett: ${model.correctLetters.join(' ')}</div><br>
+        <input id="textInput" type="text" onchange="model.guessedLetters=this.value; positionOfLetterInPickedWord()" maxlength="1">
+        <button onclick="positionOfLetterInPickedWord()">Sjekk bokstav</button>
+        <button onclick="pickAWord()">New Word</button>
+        `;
+        document.getElementById('app').innerHTML = html;
+    }
+
+    //controller
+    pickAWord();
+    function pickAWord() {
+        model.correctLetters = [];
+        model.pickedword = model.fasit[Math.floor(Math.random() * model.fasit.length)];
+        for (let i = 0; i < model.pickedword.length; i++) {
+            model.correctLetters[i] = "_ ";
+        }
+        render();
+    }
+
+
+    function positionOfLetterInPickedWord() {
+        if(model.guessedLetters === "") return;
+            if(model.pickedword.includes(model.guessedLetters)){
+                for(let i = 0; i < model.pickedword.length; i++){
+                    if(model.guessedLetters === model.pickedword[i]){
+                        model.correctLetters[i] = model.guessedLetters;
+                    }
+                }
+            } else {
+                if(!model.wrongLetters.includes(model.guessedLetters)){
+                    model.wrongLetters.push(model.guessedLetters);
+                }
+                else{
+                    alert('Du har allerede gjettet bokstaven');
+                }
+            }
+        model.guessedLetters = "";
+        youWin();
+        render();
+        refocusInput();
+    }
+
+    function youWin() {
+            let correctword = model.correctLetters.join('');
+            console.log(correctword);
+            if (correctword.toString() === model.pickedWord) alert("du har vunnet");
+        }
+
+    const refocusInput = () => {
+        document.getElementById('textInput').focus();
+    }
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

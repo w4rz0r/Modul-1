@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Press+Start+2P&display=swap');
+
+
+body {
+    height: 100vh;
+    background-image: url(/modul-1/stein-sakt-papir/images/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    font-size: 150px;
+    color: rgb(206, 221, 5);
+    -webkit-text-stroke: 5px blue;
+    text-shadow: 15px 15px rgb(0, 0, 0);
+}
+
+ h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+
+} 
+
+body button {
+    margin: 30px;
+}
+
+#all-elements {
+    text-align: center;
+}
+
+.element {
+    height: 150px;
+    cursor: pointer;
+    margin: 30px;
+}
+
+#images {
+    text-align: center;
+}
+
+
+#onix {
+    height: 250px;
+    margin-right: 100px;
+}
+
+#pikachu {
+    height: 100px;
+    margin-right: 50px;
+}
+
+#gyarados {
+    height: 300px;
+    margin-right: 50px;
+}
+
+.human {
+    height: 150px;
+    margin-right: 50px;
+}
+
+#living-Elements {
+    margin-top: 100px;
+}
